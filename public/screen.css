@@ -6,4 +6,21 @@ body {
   margin: 0;
   min-height: 100%;
   font: 16px / 1 sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color .5s, color .5s;
+}
+h1 {
+  transition: color .5s;
+}
+
+button {
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color .5s, color .5s;  
 }
