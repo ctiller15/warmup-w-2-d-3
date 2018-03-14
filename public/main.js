@@ -6,16 +6,19 @@ const colorChange = () => {
   let red = calculateColor();
   let blue = calculateColor();
   let green = calculateColor();
-  // console.log(red, blue, green);
+
   let colorName = `rgb(${red},${green},${blue})`;
   let invertedColor = `rgb(${255 - red},${255 - green},${255 - blue})`;
 
-  colorText.textContent = colorName;
-  colorText.style.color = invertedColor;
-  background.style.backgroundColor = colorName;
-  colorButton.style.backgroundColor = invertedColor;
-  colorButton.style.color = colorName;
+  changeColorItems(colorName, invertedColor);
+}
 
+const changeColorItems = (color, inverted) => {
+  colorText.textContent = color;
+  colorText.style.color = inverted;
+  background.style.backgroundColor = color;
+  colorButton.style.backgroundColor = inverted;
+  colorButton.style.color = color;
 }
 
 const calculateColor = () => {
@@ -23,10 +26,7 @@ const calculateColor = () => {
 }
 
 const main = () => {
-  let colorChangingAuto = setInterval(() => {
-    colorChange();
-  }, 10000);
-
+  let colorChangingAuto = setInterval(colorChange, 500);
 }
 
 document.addEventListener('DOMContentLoaded', main)

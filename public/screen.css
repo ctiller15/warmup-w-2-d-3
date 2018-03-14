@@ -24,3 +24,7 @@ button {
   font-weight: bold;
   transition: background-color .5s, color .5s;  
 }
+
+button:hover {
+  cursor: pointer;
+}
